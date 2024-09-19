@@ -1,0 +1,140 @@
+\section{Python Library API}
+\subsection{Causal Relationship Discovery}
+\textbf{ensemble}
+\par\textcolor{cyan}{def ensemble(data:pd.DataFrame) \mbox{->} List[np.ndarray]:}
+\par\textbf{Inputs}
+\begin{itemize}
+    \item data: pd.DataFrame, i.e. the Time-independent steady-state system or experimental cross section data obtained by randomized statistics. 
+    \begin{table}[ht!]
+  \begin{center}
+    \begin{tabular}{l|c|c|r} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+      \textbf{Index} & \textbf{Value 1} & \textbf{Value 2} & \textbf{Value 3}\\
+      $ $ & $V5\mbox{-}GFP$ & $V5\mbox{-}DDX39A$ & $V5\mbox{-}DDX56$ \\
+      \hline
+      1 & 18.5 & 129.5 & 243\\
+      2 & 56 & 492.5 & 1426\\
+      3 & 250.5 & 2769 & 14043.5\\
+    \end{tabular}
+    \caption{Input Example}
+  \end{center}
+\end{table}
+\end{itemize}
+\par\textbf{Outputs}
+\begin{itemize}
+    \item candidates: List[np.ndarray], i.e. the outputs of multiple base-e stimators(AKA constraint-based, score-based, permutation-based, linear Gaussian acyclic, continuous optimization) 
+\end{itemize}
+
+\noindent\textbf{voting}
+\par\textcolor{cyan}{def voting(candidates:List[np.ndarray], priori:pd.DataFrame) \mbox{->} np.ndarray:}
+\par\textbf{Inputs}
+\begin{itemize}
+    \item candidates: List[np.ndarray], i.e. the return value of ensemble
+    \item priori: np.ndarray, i.e.adjcency\_matrix of partial graph containing priori knowledge 
+\end{itemize}
+\par\textbf{Outputs}
+\begin{itemize}
+    \item fine\_graph: the predicted causal directed graph 
+\end{itemize}
+
+\subsection{Given Graph Falsification}
+\textbf{falsifypack}
+\par\textbf{Inputs}
+\begin{itemize}
+    \item data\_path: str. The file format should be csv. The file content format should be similar to Table 1 
+    \item graph\_path: str. The file format should be gml. GML, the Graph Modelling Language. A GML file consists of a hierarchical key-value lists. Graphs can be annotated with arbitrary data structures. GML is the standard file format in the Graphlet graph editor system. 
+    \item to\_plot: boolean. True for plotting the permutation\mbox{-}fraction of violations figure
+    \item significance\_level = 0.05: float. Significance level for the permutation test.
+    \item significance\_ci = 0.05: float. Significance level for (conditional) independence tests.
+    \item n\_perm = 100: int. Number of permutations to perform. If -1 use all n\_nodes! permutations.
+\end{itemize}
+\par\textbf{Outputs}
+\begin{itemize}
+    \item results: str, i.e. text blob of Falsificaton Summary which contains a set of metrics.
+\end{itemize}
+
+\subsection{Kink \& Discontinuity Regression}
+\textbf{kink\_regression\_2d}\\
+\textcolor{magenta}{use local piecewise linear regression to realize kink regression and discontinuous regression, which applys to timeseries data and common x-y data}
+\par\textbf{Inputs}
+\begin{itemize}
+    \item file\_path:str, i.e. path to timeseries data and common x-y data. file format: .csv
+    \item xl: float. local regression lower x\mbox{-}bound 
+    \item xh: float. local regression upper x\mbox{-}bound
+    \item iplot: boolean. True for plotting the x-y regression figure 
+\end{itemize}
+\par\textbf{Outputs}
+\begin{itemize}
+    \item best\_knot\_x: the x-coordinate of kink with lowest residual error
+    \item best\_model: an object of piecewise regression model class
+\end{itemize}
+
+\noindent\textbf{kink\_regression\_3d}\\
+\textcolor{magenta}{use local piecewise linear regression of higher dimension to realize kink regression and discontinuous regression, which applys to x-y-target data}
+\par\textbf{Inputs}
+\begin{itemize}
+    \item file\_path: str, i.e. path to common x-y-z data. file format: .csv
+    \item xl, xh, yl, yh: float, i.e. local regression lower and upper xy\mbox{-}bound
+    \item iplot: boolean. True for plotting the regression figure 
+    \item response\_surface\_design: boolean. True for build response surface
+\end{itemize}
+\par\textbf{Outputs}
+\begin{itemize}
+    \item best\_knot\_x,best\_knot\_y: the xy-coordinate of kink with lowest residual error
+    \item best\_model: an object of piecewise regression model class
+    \item filtered\_data: points of O(min{target}) in the response surface, if response\_surface\_design == True
+\end{itemize}
+
+
+\subsection{Response Surface Methodology}
+\textbf{bayes\_opt}\\
+\textcolor{cyan}{def bayes\_opt(df:pd.DataFrame, ploy\_dim=2, init\_p=5, iters=25, verbose\_=2, mode='maximize'):}
+\par\textbf{Inputs}
+\begin{itemize}
+    \item df: pd.DataFrame with columns "X", "Y", "Z".
+    \item ploy\_dim: Degree of polynomial surrogate model
+    \item init\_p: Number of random points to probe before starting the optimization.
+    \item iters: Number of iterations where the method attempts to find the maximum value.
+    \item verbose\_: The level of verbosity. verbose = 2 prints all probed points, verbose = 1 prints only when a maximum is observed, verbose = 0 is silent.
+    \item mode: str. 'maximize' or 'minimize'
+\end{itemize}
+\par\textbf{Outputs}
+\begin{itemize}
+    \item results: json. \{'target':\_, 'params': \{'x':\_, 'y': \_\}\}
+\end{itemize}
+
+\subsection{Input\mbox{-}Output Module}
+\textbf{load\_data}\\
+
+\textbf{Inputs}
+\begin{itemize}
+    \item path: str, i.e. the relative or absolute path of data file to the current directory
+    \item type: str, i.e. the type of the file. Supported types include 'csv', 'gse', 'e\mbox{-}mtab' , which refer to common .csv-like file, GEO "Series Matrix File(s)" and ArrayExress  "E\mbox{-}MTAB"  respectively.
+\end{itemize}
+\par\textbf{Return}
+\begin{itemize}
+    \item processed\_data: DataFrame, i.e. legal data to calculate by the above functions and to be accepted by the API of the python library 
+\end{itemize}
+
+\noindent \textbf{array\_to\_gml}\\
+
+\textbf{Inputs}
+\begin{itemize}
+    \item arr: np.ndarray, i.e. the adjacency matrix of causal graph
+    \item file\_name: str, i.e. the name of the file saved in the current dir.
+    \item labels: list[str], i.e. a 3x3 array represents 3 nodes ['A','B','C']
+\end{itemize}
+\par\textbf{Outputs}
+\begin{itemize}
+    \item file: .gml. GML, the Graph Modelling Language. GML’s key features are portability, simple syntax, extensibility and flexibility. A GML file consists of a hierarchical key-value lists. Graphs can be annotated with arbitrary data structures. The idea for a common file format was born at the GD’95; this proposal is the outcome of many discussions. GML is the standard file format in the Graphlet graph editor system. It has been overtaken and adapted by several other systems for drawing graphs.
+\end{itemize}
+
+\noindent \textbf{gml\_to\_array}\\
+
+\textbf{Inputs}
+\begin{itemize}
+    \item  file\_path: .gml. GML, the Graph Modelling Language. A GML file consists of a hierarchical key-value lists. Graphs can be annotated with arbitrary data structures. GML is the standard file format in the Graphlet graph editor system. 
+\end{itemize}
+\par\textbf{Return}
+\begin{itemize}
+    \item array: np.ndarray, i.e. the adjacency matrix of causal graph
+\end{itemize}
