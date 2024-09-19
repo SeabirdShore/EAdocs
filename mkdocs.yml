@@ -8,7 +8,7 @@ nav:
   - Home: index.md
   - Installation: installation.md
   - API: api.md
-  - Wiki: https://external.wiki.url
+  - Wiki: https://2024.igem.wiki/zju-china/software
 
   - Example:
       - Basic Tutorial: example/demo.ipynb
