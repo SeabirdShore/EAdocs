@@ -4,8 +4,6 @@ theme:
   name: kpn
   logo: assets/2.png
 
-site_url: https://SeabirdShore.github.io/
-
 nav:
   - Home: index.md
   - Installation: installation.md
@@ -15,11 +13,7 @@ nav:
   - Example:
       - Basic Tutorial: example/demo.ipynb
       - Mutation Selection: example/wetlab.ipynb
-
-extra:
-  repo_icon: 'github'
   
-
 plugins:
   - search
   - mkdocs-jupyter
