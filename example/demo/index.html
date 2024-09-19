@@ -1796,9 +1796,9 @@ print(ratio_of_paths(fine_graph, y_true.to_numpy()))</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ana</span> <span class="o">=</span> <span class="n">ea</span><span class="o">.</span><span class="n">Gfalsify</span><span class="p">(</span><span class="s2">"./data/cyto_full_data.csv"</span><span class="p">,</span><span class="s2">"./data/falsify_sachs.gml"</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ana</span> <span class="o">=</span> <span class="n">ea</span><span class="o">.</span><span class="n">falsifypack</span><span class="p">(</span><span class="s2">"./data/cyto_full_data.csv"</span><span class="p">,</span><span class="s2">"./data/falsify_sachs.gml"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-10">ana = ea.Gfalsify("./data/cyto_full_data.csv","./data/falsify_sachs.gml")</div>
+<div class="clipboard-copy-txt" id="cell-10">ana = ea.falsifypack("./data/cyto_full_data.csv","./data/falsify_sachs.gml")</div>
 </div>
 </div>
 </div>
@@ -1877,7 +1877,7 @@ print(ratio_of_paths(fine_graph, y_true.to_numpy()))</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [64]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
@@ -1890,78 +1890,9 @@ print(ratio_of_paths(fine_graph, y_true.to_numpy()))</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">expAscribe.plot</span> <span class="kn">import</span> <span class="n">visgraph</span>
-<span class="n">visgraph</span><span class="p">(</span><span class="n">fine_graph</span><span class="p">,[</span><span class="s1">'praf'</span><span class="p">,</span><span class="s1">'pmek'</span><span class="p">,</span><span class="s1">'plcg'</span><span class="p">,</span><span class="s1">'PIP2'</span><span class="p">,</span><span class="s1">'PIP3'</span><span class="p">,</span><span class="s1">'p44/42'</span><span class="p">,</span><span class="s1">'pakts473'</span><span class="p">,</span><span class="s1">'PKA'</span><span class="p">,</span><span class="s1">'PKC'</span><span class="p">,</span><span class="s1">'P38'</span><span class="p">,</span><span class="s1">'pjnk'</span><span class="p">])</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ea</span><span class="o">.</span><span class="n">drawgraph</span><span class="p">(</span><span class="n">fine_graph</span><span class="p">,[</span><span class="s1">'praf'</span><span class="p">,</span><span class="s1">'pmek'</span><span class="p">,</span><span class="s1">'plcg'</span><span class="p">,</span><span class="s1">'PIP2'</span><span class="p">,</span><span class="s1">'PIP3'</span><span class="p">,</span><span class="s1">'p44/42'</span><span class="p">,</span><span class="s1">'pakts473'</span><span class="p">,</span><span class="s1">'PKA'</span><span class="p">,</span><span class="s1">'PKC'</span><span class="p">,</span><span class="s1">'P38'</span><span class="p">,</span><span class="s1">'pjnk'</span><span class="p">])</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-12">from expAscribe.plot import visgraph
-visgraph(fine_graph,['praf','pmek','plcg','PIP2','PIP3','p44/42','pakts473','PKA','PKC','P38','pjnk'])</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>graph.html
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [64]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-13">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">labels</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s1">'praf'</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="s1">'pmek'</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="s1">'plcg'</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span><span class="s1">'PIP2'</span><span class="p">,</span><span class="mi">4</span><span class="p">:</span><span class="s1">'PIP3'</span><span class="p">,</span><span class="mi">5</span><span class="p">:</span><span class="s1">'p44/42'</span><span class="p">,</span><span class="mi">6</span><span class="p">:</span><span class="s1">'pakts473'</span><span class="p">,</span><span class="mi">7</span><span class="p">:</span><span class="s1">'PKA'</span><span class="p">,</span><span class="mi">8</span><span class="p">:</span><span class="s1">'PKC'</span><span class="p">,</span><span class="mi">9</span><span class="p">:</span><span class="s1">'P38'</span><span class="p">,</span><span class="mi">10</span><span class="p">:</span><span class="s1">'pjnk'</span><span class="p">}</span>
-
-<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_array</span><span class="p">(</span><span class="n">fine_graph</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">)</span>
-
-<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">kamada_kawai_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">'lightblue'</span><span class="p">,</span> <span class="n">arrowsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">)</span>
-
-<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-13">import matplotlib.pyplot as plt
-import networkx as nx
-import numpy as np
-
-labels = {0:'praf',1:'pmek',2:'plcg',3:'PIP2',4:'PIP3',5:'p44/42',6:'pakts473',7:'PKA',8:'PKC',9:'P38',10:'pjnk'}
-
-G = nx.from_numpy_array(fine_graph, create_using=nx.DiGraph)
-
-pos = nx.kamada_kawai_layout(G)  
-nx.draw(G, pos, with_labels=True, labels=labels, node_color='lightblue', arrowsize=20, edge_color='gray')
-
-nx.draw_networkx_labels(G, pos, labels=labels)
-
-plt.show()
-</div>
+<div class="clipboard-copy-txt" id="cell-12">ea.drawgraph(fine_graph,['praf','pmek','plcg','PIP2','PIP3','p44/42','pakts473','PKA','PKC','P38','pjnk'])</div>
 </div>
 </div>
 </div>
@@ -1999,7 +1930,7 @@ plt.show()
 <div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-14">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-13">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2011,7 +1942,7 @@ plt.show()
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">kink_knot</span><span class="p">,</span> <span class="n">kink_model</span> <span class="o">=</span> <span class="n">ea</span><span class="o">.</span><span class="n">kink_regression_2d</span><span class="p">(</span><span class="s1">'./data/manually_labeled/kink_test_2d.csv'</span><span class="p">,</span> <span class="n">xl</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">xh</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">iplot</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-14">kink_knot, kink_model = ea.kink_regression_2d('./data/manually_labeled/kink_test_2d.csv', xl = -1.5, xh = 0.8, iplot = True)</div>
+<div class="clipboard-copy-txt" id="cell-13">kink_knot, kink_model = ea.kink_regression_2d('./data/manually_labeled/kink_test_2d.csv', xl = -1.5, xh = 0.8, iplot = True)</div>
 </div>
 </div>
 </div>
@@ -2038,7 +1969,7 @@ plt.show()
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-14">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2050,7 +1981,7 @@ plt.show()
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">kink_knot</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-15">print(kink_knot)</div>
+<div class="clipboard-copy-txt" id="cell-14">print(kink_knot)</div>
 </div>
 </div>
 </div>
@@ -2078,7 +2009,7 @@ plt.show()
 <div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2090,7 +2021,7 @@ plt.show()
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">kink_model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-16">print(kink_model.summary())</div>
+<div class="clipboard-copy-txt" id="cell-15">print(kink_model.summary())</div>
 </div>
 </div>
 </div>
@@ -2144,7 +2075,7 @@ Notes:
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-17">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2156,7 +2087,7 @@ Notes:
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">kink_knot_x</span><span class="p">,</span> <span class="n">kink_knot_y</span><span class="p">,</span> <span class="n">kink_model_3d</span><span class="p">,</span> <span class="n">filtered_samples</span> <span class="o">=</span> <span class="n">ea</span><span class="o">.</span><span class="n">kink_regression_3d</span><span class="p">(</span><span class="s1">'./data/manually_labeled/kink_test_3d.csv'</span><span class="p">,</span> <span class="n">xl</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">xh</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">yl</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">yh</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">iplot</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">responsive_surface_design</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-17">kink_knot_x, kink_knot_y, kink_model_3d, filtered_samples = ea.kink_regression_3d('./data/manually_labeled/kink_test_3d.csv', xl = -2.0, xh = 2.0, yl = -2.0, yh = 2.0, iplot = True, responsive_surface_design=True)</div>
+<div class="clipboard-copy-txt" id="cell-16">kink_knot_x, kink_knot_y, kink_model_3d, filtered_samples = ea.kink_regression_3d('./data/manually_labeled/kink_test_3d.csv', xl = -2.0, xh = 2.0, yl = -2.0, yh = 2.0, iplot = True, responsive_surface_design=True)</div>
 </div>
 </div>
 </div>
@@ -2189,7 +2120,7 @@ Notes:
 <div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-18">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-17">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2202,7 +2133,7 @@ Notes:
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">kink_knot_x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">kink_knot_y</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-18">print(kink_knot_x)
+<div class="clipboard-copy-txt" id="cell-17">print(kink_knot_x)
 print(kink_knot_y)</div>
 </div>
 </div>
@@ -2232,7 +2163,7 @@ print(kink_knot_y)</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-19">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-18">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2244,7 +2175,7 @@ print(kink_knot_y)</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">kink_model_3d</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-19">print(kink_model_3d.summary())</div>
+<div class="clipboard-copy-txt" id="cell-18">print(kink_model_3d.summary())</div>
 </div>
 </div>
 </div>
@@ -2312,7 +2243,7 @@ Notes:
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-20">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-19">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2324,7 +2255,7 @@ Notes:
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ea</span><span class="o">.</span><span class="n">bayes_opt</span><span class="p">(</span><span class="n">filtered_samples</span><span class="p">,</span> <span class="n">init_p</span><span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">iters</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'minimize'</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-20">print(ea.bayes_opt(filtered_samples, init_p= 2, iters=5, mode='minimize'))</div>
+<div class="clipboard-copy-txt" id="cell-19">print(ea.bayes_opt(filtered_samples, init_p= 2, iters=5, mode='minimize'))</div>
 </div>
 </div>
 </div>
@@ -2403,7 +2334,7 @@ Notes:
 
   <!--
   MkDocs version      : 1.6.1
-  Docs Build Date UTC : 2024-09-19 11:22:00.492634+00:00
+  Docs Build Date UTC : 2024-09-19 16:40:09.673970+00:00
   -->
 
   <!--
