@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--
+    The page_title contains the title for a page as shown in the navigation.
+    Site name contains the name as defined in the mkdocs.yml
+  -->
+  <title>API - expAscribe</title>
+
+  <!-- Page description -->
+  
+
+  <!-- Redirect -->
+  
+    <link rel="canonical" href="https://SeabirdShore.github.io/api/" />
+  
+
+  <!-- Page author -->
+  
+  <!--
+    Just add a favicon.ico image to the docs.
+  -->
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  <link rel="stylesheet" href="../css/colors.css">
+  <link rel="stylesheet" href="../css/bundle.css">
+  <link rel="stylesheet" href="../css/theme.css">
+  <link media="print" onload="this.media='all'" rel="stylesheet" href="../css/atom-dark-one.min.css">
+  <!--
+    extra_ess contains paths to CSS files in the users
+    documentation directory or a list of CSS files defined in
+    their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_css
+  -->
+  
+
+  
+  
+
+  <!--
+    Include Google Analytics tracking code.
+
+    http://www.mkdocs.org/user-guide/configuration/#google_analytics
+  -->
+  
+
+</head>
+
+<body>
+<input id="dark-mode" type="checkbox" />
+<!--
+  The JS has to be loaded here for maximum performance, right after the #dark-mode
+-->
+<script src="../js/theme.js"></script>
+<div class="app-body">
+  <!-- KPN STYLE Beginning -->
+  <div class="app-layout ">
+    <!-- Top Bar -->
+    <nav class="app-layout__top-bar top-bar">
+      <a class="top-bar__logo">
+        <img alt="KPN Logo" src="../img/logo-kpn.svg" />
+      </a>
+      <div class="top-bar__title">expAscribe</div>
+      <ul class="top-bar__menu">
+        <!--
+          Create a search form that sends the user to the search.html file - this is
+          the other file in the template which adds search to the theme. The only
+          requirement here is that there is a text input with the name 'q' and the
+          action and methods match below.
+        -->
+          <li class="top-bar__item">
+
+            <span role="search" id="search-input-wrapper">
+              <form action="../search.html" method="get">
+                <input type="text" class="input" id="search-input" name="q" placeholder="Search..." />
+              </form>
+            </span >
+          </li>
+        <!--
+          Versioning support
+        -->
+        
+        <!--
+          Support repo URL
+        -->
+        <li class="top-bar__item">
+          
+        </li>
+
+        <li class="top-bar__item">
+            <label class="top-bar__link" id="label-dark-mode" for="dark-mode" title="Dark mode">
+              <svg alt="dark mode" width="24" height="24">
+                <image xlink:href="../img/ui-bulb.svg" width="24" height="24"/>
+            </svg>
+            </label>
+        </li>
+        <li class="top-bar__item top-bar__item--trigger"></li>
+
+        <!-- <li class="top-bar__item">
+
+          <a class="top-bar__link top-bar__link--active">Home</a>
+        </li>
+        <li class="top-bar__item"><a class="top-bar__link">Information</a></li>
+        <li class="top-bar__item">
+          <a class="top-bar__link top-bar__link--collapsed">Getting Started</a>
+
+        </li>
+        <li class="top-bar__item top-bar__item--trigger">Menu</li> -->
+      </ul>
+    </nav>
+
+    <!--
+      Create the navigation for the documentation.
+
+      Because we don't know how many levels deep the navigation is, it needs to
+      be included in it's own file so it can be recursive. Otherwise the theme
+      can also only support a specific number of levels.
+
+      See the nav.html file for more details about how this works.
+    -->
+    <nav class="app-layout__side-bar side-bar">
+      <div class="side-bar__action-bar">
+        <a class="side-bar__link" href="/">expAscribe</a>
+        <!--
+          Versioning support
+        -->
+        
+        <button class="side-bar__close"></button>
+      </div>
+      <ul class="side-bar__menu">
+        
+          <!--
+
+-->
+
+<li>
+  <a href=".." class="side-bar__link ">
+    Home
+  </a>
+</li>
+
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../installation/" class="side-bar__link ">
+    Installation
+  </a>
+</li>
+
+        
+          <!--
+
+-->
+
+<li>
+  <a href="./" class="side-bar__link side-bar__link--active">
+    API
+  </a>
+</li>
+
+        
+          <!--
+
+-->
+
+<li>
+  <a href="https://external.wiki.url" class="side-bar__link ">
+    Wiki
+  </a>
+</li>
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      Example
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../example/demo/" class="side-bar__link ">
+    Basic Tutorial
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../example/wetlab/" class="side-bar__link ">
+    Mutation Selection
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+      </ul>
+    </nav>
+
+    <!-- MAIN BLOCK -->
+    <main class="app-layout__main main">
+      <div class="app-layout__title-bar title-bar">
+        <div class="title-bar__title">API</div>
+      </div>
+      
+      <div class="sidebar--secondary hidden-s hidden-xs">
+        <h4>Table of contents</h4>
+        <ul>
+        
+          
+            
+                <li><a class="a" href="#causal-relationship-discovery">Causal Relationship Discovery</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#ensemble">ensemble</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#voting">voting</a></li>
+                
+            
+                <li><a class="a" href="#given-graph-falsification">Given Graph Falsification</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#falsifypack">falsifypack</a></li>
+                
+            
+                <li><a class="a" href="#kink-discontinuity-regression">Kink &amp; Discontinuity Regression</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#kink_regression_2d">kink_regression_2d</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#kink_regression_3d">kink_regression_3d</a></li>
+                
+            
+                <li><a class="a" href="#response-surface-methodology">Response Surface Methodology</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#bayes_opt">bayes_opt</a></li>
+                
+            
+                <li><a class="a" href="#input-output-module">Input-Output Module</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#load_data">load_data</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#array_to_gml">array_to_gml</a></li>
+                
+                    <li class="child-li"><a class="a child" href="#gml_to_array">gml_to_array</a></li>
+                
+            
+          
+        
+        </ul>
+      </div>
+      
+      <div class="container content-block">
+        <div class="kpn-style">
+          <div class="card">
+            <div class="card__body">
+
+              
+              <h1 id="python-library-api">Python Library API</h1>
+<h2 id="causal-relationship-discovery">Causal Relationship Discovery</h2>
+<h3 id="ensemble">ensemble</h3>
+<p>inference by heterogenous parallel base-estimators</p>
+<p>def ensemble(data:pd.DataFrame)-&gt;List[np.ndarray]:</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li>
+<p>data: pd.DataFrame, i.e. the Time-independent steady-state system or
+    experimental cross section data obtained by randomized statistics. </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>18.5</td>
+<td>129.5</td>
+<td>243</td>
+</tr>
+<tr>
+<td>2</td>
+<td>56</td>
+<td>492.5</td>
+<td>1426</td>
+</tr>
+<tr>
+<td>3</td>
+<td>250.5</td>
+<td>2769</td>
+<td>14043.5</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li>candidates: List[np.ndarray], i.e. the outputs of multiple base-e
+    stimators(AKA constraint-based, score-based, permutation-based,
+    linear Gaussian acyclic, continuous optimization)</li>
+</ul>
+<h3 id="voting">voting</h3>
+<p>Soft voting machines that integrate basic estimates</p>
+<p>def voting(candidates:List[np.ndarray], priori:pd.DataFrame)-&gt;np.ndarray:</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li>
+<p>candidates: List[np.ndarray], i.e. the return value of ensemble</p>
+</li>
+<li>
+<p>priori: np.ndarray, i.e.adjcency_matrix of partial graph containing
+    priori knowledge</p>
+</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li>fine_graph: the predicted causal directed graph</li>
+</ul>
+<h2 id="given-graph-falsification">Given Graph Falsification</h2>
+<h3 id="falsifypack">falsifypack</h3>
+<p><strong>Inputs</strong></p>
+<ul>
+<li>
+<p>data_path: str. The file format should be csv. The file content
+    format should be similar to Table 1</p>
+</li>
+<li>
+<p>graph_path: str. The file format should be gml. GML, the Graph
+    Modelling Language. A GML file consists of a hierarchical key-value
+    lists. Graphs can be annotated with arbitrary data structures. GML
+    is the standard file format in the Graphlet graph editor system.</p>
+</li>
+<li>
+<p>to_plot: boolean. True for plotting the permutation-fraction of
+    violations figure</p>
+</li>
+<li>
+<p>significance_level = 0.05: float. Significance level for the
+    permutation test.</p>
+</li>
+<li>
+<p>significance_ci = 0.05: float. Significance level for (conditional)
+    independence tests.</p>
+</li>
+<li>
+<p>n_perm = 100: int. Number of permutations to perform. If -1 use all
+    n_nodes! permutations.</p>
+</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li>results: str, i.e. text blob of Falsificaton Summary which contains
+    a set of metrics.</li>
+</ul>
+<h2 id="kink-discontinuity-regression">Kink &amp; Discontinuity Regression</h2>
+<h3 id="kink_regression_2d">kink_regression_2d</h3>
+<p>use local piecewise linear regression to realize kink regression and
+discontinuous regression, which applys to timeseries data and common x-y
+data</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li>
+<p>file_path:str, i.e. path to timeseries data and common x-y data.
+    file format: .csv</p>
+</li>
+<li>
+<p>xl: float. local regression lower x-bound</p>
+</li>
+<li>
+<p>xh: float. local regression upper x-bound</p>
+</li>
+<li>
+<p>iplot: boolean. True for plotting the x-y regression figure</p>
+</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li>
+<p>best_knot_x: the x-coordinate of kink with lowest residual error</p>
+</li>
+<li>
+<p>best_model: an object of piecewise regression model class</p>
+</li>
+</ul>
+<h3 id="kink_regression_3d">kink_regression_3d</h3>
+<p>use local piecewise linear regression of higher dimension to realize
+kink regression and discontinuous regression, which applys to x-y-target
+data</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li>
+<p>file_path: str, i.e. path to common x-y-z data. file format: .csv</p>
+</li>
+<li>
+<p>xl, xh, yl, yh: float, i.e. local regression lower and upper
+    xy-bound</p>
+</li>
+<li>
+<p>iplot: boolean. True for plotting the regression figure</p>
+</li>
+<li>
+<p>response_surface_design: boolean. True for build response surface</p>
+</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li>
+<p>best_knot_x,best_knot_y: the xy-coordinate of kink with lowest
+    residual error</p>
+</li>
+<li>
+<p>best_model: an object of piecewise regression model class</p>
+</li>
+<li>
+<p>filtered_data: points of O(mintarget) in the response surface, if
+    response_surface_design == True</p>
+</li>
+</ul>
+<h2 id="response-surface-methodology">Response Surface Methodology</h2>
+<h3 id="bayes_opt">bayes_opt</h3>
+<p>def bayes_opt(df:pd.DataFrame, ploy_dim=2, init_p=5, iters=25,
+verbose_=2, mode='maximize'):</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li>
+<p>df: pd.DataFrame with columns "X", "Y", "Z".</p>
+</li>
+<li>
+<p>ploy_dim: Degree of polynomial surrogate model</p>
+</li>
+<li>
+<p>init_p: Number of random points to probe before starting the
+    optimization.</p>
+</li>
+<li>
+<p>iters: Number of iterations where the method attempts to find the
+    maximum value.</p>
+</li>
+<li>
+<p>verbose_: The level of verbosity. verbose = 2 prints all probed
+    points, verbose = 1 prints only when a maximum is observed, verbose
+    = 0 is silent.</p>
+</li>
+<li>
+<p>mode: str. 'maximize' or 'minimize'</p>
+</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li>results: json. {'target':<em>, 'params': {'x':</em>, 'y': _}}</li>
+</ul>
+<h2 id="input-output-module">Input-Output Module</h2>
+<h3 id="load_data">load_data</h3>
+<p><strong>Inputs</strong></p>
+<ul>
+<li>
+<p>path: str, i.e. the relative or absolute path of data file to the
+    current directory</p>
+</li>
+<li>
+<p>type: str, i.e. the type of the file. Supported types include 'csv',
+    'gse', 'e-mtab' , which refer to common .csv-like file, GEO "Series
+    Matrix File(s)" and ArrayExress "E-MTAB" respectively.</p>
+</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li>processed_data: DataFrame, i.e. legal data to calculate by the above
+    functions and to be accepted by the API of the python library</li>
+</ul>
+<h3 id="array_to_gml">array_to_gml</h3>
+<p><strong>Inputs</strong></p>
+<ul>
+<li>
+<p>arr: np.ndarray, i.e. the adjacency matrix of causal graph</p>
+</li>
+<li>
+<p>file_name: str, i.e. the name of the file saved in the current dir.</p>
+</li>
+<li>
+<p>labels: list[str], i.e. a 3x3 array represents 3 nodes
+    ['A','B','C']</p>
+</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li>file: .gml. GML, the Graph Modelling Language. GML's key features
+    are portability, simple syntax, extensibility and flexibility. A GML
+    file consists of a hierarchical key-value lists. Graphs can be
+    annotated with arbitrary data structures. The idea for a common file
+    format was born at the GD'95; this proposal is the outcome of many
+    discussions. GML is the standard file format in the Graphlet graph
+    editor system. It has been overtaken and adapted by several other
+    systems for drawing graphs.</li>
+</ul>
+<h3 id="gml_to_array">gml_to_array</h3>
+<p><strong>Inputs</strong></p>
+<ul>
+<li>file_path: .gml. GML, the Graph Modelling Language. A GML file
+    consists of a hierarchical key-value lists. Graphs can be annotated
+    with arbitrary data structures. GML is the standard file format in
+    the Graphlet graph editor system.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li>array: np.ndarray, i.e. the adjacency matrix of causal graph</li>
+</ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__body">
+        
+        <div class="row">
+          <div class="col col--s-4 col--m-3 col--l-2">
+          </div>
+          <div class="col col--s-4 col--m space-between">
+            
+              <a class="footer__link padding-top-0 navigation-prev"
+                href="../installation/"
+                title="Installation">
+                &#8592; Previous Page
+              </a>
+            
+            
+            
+              <a class="footer__link padding-top-0 navigation-next"
+                href="../example/demo/"
+                title="Basic Tutorial"/>
+                Next Page &#8594;
+              </a>
+            
+          </div>
+          <div class="col col--s-4 col--m-3 ">
+          </div>
+        </div>
+        
+      </div>
+    </footer>
+  </div>
+
+
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2024-09-19 10:52:57.544300+00:00
+  -->
+
+  <!--
+    To include static assets from our theme, just add
+    .. beforehand which will be the relative path to
+    the root of the documentation.
+  -->
+  <script src="../js/highlight.min.js"></script>
+  <script src="../js/languages/groovy.min.js"></script>
+  <script src="../js/languages/asciidoc.min.js"></script>
+  <script src="../js/languages/nix.min.js"></script>
+
+  <script>
+    hljs.highlightAll();
+  </script>
+  <script async src="../js/detail.js"></script>
+  <!--
+    extra_javascript contains paths to JavaScript files in the
+    users documentation directory or a list of JavaScript files
+    defined in their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_javascript
+  -->
+  
+    <script src="../search/main.js"></script>
+  
+
+
+  <script>
+  function getMermaidTheme() {
+    if (document.getElementById("dark-mode").checked) {
+      return 'dark'
+    }
+    return 'forest'
+  }
+
+  function initMermaid() {
+    mermaid.initialize({
+      theme: getMermaidTheme(),
+      logLevel: 1,
+    });
+  }
+  var mermaidClass = document.getElementsByClassName('mermaid');
+  if (mermaidClass.length > 0) {
+
+    var mermaidScript = document.createElement('script');
+    mermaidScript.setAttribute("src", "../js/mermaid.min.js");
+    mermaidScript.setAttribute("async", "false");
+    mermaidScript.setAttribute("type", "text/javascript");
+    mermaidScript.onload = initMermaid;
+    document.body.appendChild(mermaidScript)
+
+  }
+  </script>
+
+</div>
+</body>
+</html>
